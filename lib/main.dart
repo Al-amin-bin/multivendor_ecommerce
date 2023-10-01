@@ -15,9 +15,33 @@ class AppRoot extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        inputDecorationTheme: InputDecorationTheme(
+          labelStyle: const TextStyle(color: Colors.black),
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Colors.black)),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Colors.black,width: 2)
+          ),
+        ),
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF1A3938),
           brightness: Brightness.light,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black87,
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
+          )
+      ),
+        outlinedButtonTheme: OutlinedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+
+                padding: const EdgeInsets.symmetric(vertical: 16),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))
+            )
         ),
         textTheme: TextTheme(
           displayLarge: const TextStyle(
